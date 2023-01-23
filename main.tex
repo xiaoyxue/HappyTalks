@@ -1,0 +1,83 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+
+%book mark
+\usepackage{hyperref}
+
+\geometry{left = 2.5cm, right = 2.5cm, top = 2cm, bottom = 2cm}
+
+% Definitions
+%*************************************************************************************************
+\newcommand\bold[1]{\textbf{#1}}
+\def\lsym{$\mathsurround=0pt {}^\ell$}
+\def\LSYM    #1{$#1$     & \texttt{\string#1}\lsym}
+\def\SYM     #1{$#1$     & \texttt{\string#1}}
+\def\BIGSYM  #1{$#1$     & $\displaystyle #1$ & \texttt{\string#1}}
+\def\ACC   #1#2{$#1{#2}$ & \texttt{\string#1}\marg*{#2}}
+\def\DEL     #1{$\big#1 \bigg#1$ & \texttt{\string#1}}
+\def\AMSSYM  #1{$#1$     & \texttt{\string#1}}
+% These symbols rely on `amsmath' package
+\def\AMSM    #1{$#1$     & \textcolor{blue}{\texttt{\string#1}}}
+\def\AMSACC#1#2{$#1{#2}$ & \textcolor{blue}{\texttt{\string#1}}\marg*{#2}}
+\def\AMSBIG  #1{$#1$     & $\displaystyle #1$ & \textcolor{blue}{\texttt{\string#1}}}
+\def\SC      #1{#1       & \texttt{\string#1}}
+\newenvironment{symbols}[1]%
+  {\small\def\arraystretch{1.1}
+  \begin{tabular}{@{}#1@{}}}%
+  {\end{tabular}}
+  
+% Command and Env writing format
+\DeclareRobustCommand*\cmd[1]{\texttt{\char`\\#1}}
+\DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
+\def\crcmd{\cmd{\char`\\}}
+\DeclareRobustCommand*\env[1]{\texttt{#1}}
+\DeclareRobustCommand*\pkg[1]{\textsf{#1}}
+\DeclareRobustCommand*\cls[1]{\textsf{#1}}
+\DeclareRobustCommand*\marg{\@ifstar\@marg\@margmeta}
+\DeclareRobustCommand*\oarg{\@ifstar\@oarg\@oargmeta}
+\DeclareRobustCommand*\Arg[1]{\@meta{#1}}
+\def\@oarg#1{\textcolor{gray}{\texttt{[#1]}}}
+\def\@oargmeta#1{\@oarg{\@meta{#1}}}
+\def\@marg#1{\texttt{\{#1\}}}
+\def\@margmeta#1{\@marg{\@meta{#1}}}
+\def\@meta#1{$\m@th\langle$\textnormal{\textit{#1}}$\m@th\rangle$}
+%*************************************************************************************************
+
+\begin{document}
+\title{\huge{\bold{Happy talks? Deep dive?}}}
+\author{Xiaoyu Xue\\
+%\texttt{xiaoyxue@outlook.com}
+\and
+Qiru Fan
+\and
+Zeyu Wu
+\and
+Yan Jin
+\and
+Correct format: First name(名) \space\space Second name(姓氏)
+}
+\date{\today}
+\maketitle
+
+\begin{center}
+\tiny{全是细节}
+\end{center}
+
+\vspace{2cm}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.6]{./Assets/TitleFigure.jpg}
+\end{figure}
+\newpage
+\tableofcontents
+\include{./Sections/Literature/Literature}
+\include{./Sections/Mathematics/Mathematics}
+\include{./Sections/Physics/Physics}
+\include{./Sections/English/English}
+\include{./Sections/Resources/Resources}
+\end{document}
